@@ -270,7 +270,7 @@ for(ww in 1:niter){ #for each iteration
               if(j==nage) NatPred[j,i,v,ww,pbi,sld]<-((NatPred[j-1,i-1,v,ww,pbi,sld]*(1-cp.by.age[j-1,i-1,v,ww,pbi,sld]))*(1-m[j-1]))+
                   ((NatPred[j,i-1,v,ww,pbi,sld]*(1-cp.by.age[j,i-1,v,ww,pbi,sld]))*(1-m[j])) # Calculate the number of plus-age individuals
             }
-            # recruitment function, eqn 7 (see supplement): 
+            # recruitment function, eqn 6 (see supplement): 
             NatPred[1,i,v,ww,pbi,sld]<-exp(log(arec)+(((-brec)*sum(NatPred[c((matage):nage),i,v,ww,pbi,sld]*wgts[(matage):nage])+zlakeareasim[i-nyr]*lakeb+rec.anoms[i-nyr])))*sum(NatPred[c((matage):nage),i,v,ww,pbi,sld]*wgts[(matage):nage]) 
           }
           
